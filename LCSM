@@ -29,8 +29,9 @@ def shared_motif(seq):
             n = len(i)
     return longest_motif
 fa = ""
-      for seq_record  in SeqIO.parse(fa,'fasta'):
-          seq_name.append(str(seq_record.name))
-          seq_string.append(str(seq_record.seq))
-  seq = {seq_name[i]:seq_string[i] for i in range(len(seq_name))}
-  print(shared_motif(seq))
+seq_name, seq_string = [], []
+for seq_record  in SeqIO.parse(fa,'fasta'):
+        seq_name.append(str(seq_record.name))
+        seq_string.append(str(seq_record.seq))
+seq = {seq_name[i]:seq_string[i] for i in range(len(seq_name))}
+print(shared_motif(seq))
